@@ -1,0 +1,67 @@
+---
+title: "Safety Review Workflow UI"
+subtitle: "Designing explainable policy approvals with red team handoffs"
+role: "Product/UX Designer"
+team: "Policy, Safety, Design, Red Team"
+year: 2023
+duration: "4 months"
+tools: ["Figma", "Amplitude", "Protopie"]
+impact:
+  [
+    "+31% reviewer throughput",
+    "-17% policy decision time",
+    "100% audit completeness in pilot"
+  ]
+heroImage: "/images/case-studies/safety-review/hero.svg"
+tags: ["policy", "ia", "interaction", "explainability"]
+links:
+  [
+    { "label": "Deck", "url": "https://example.com/deck" }
+  ]
+---
+
+<Callout intent="success">
+  <p>We introduced explainability artifacts and structured handoffs that helped reviewers move faster with higher confidence.</p>
+</Callout>
+
+## Problem
+
+Policy reviews were slow and inconsistent. Critical context lived in docs and Slack.
+
+## Constraints
+
+- Auditability and rationale required
+- Multiple reviewers async, across time zones
+
+## Process
+
+<Grid cols={3}>
+  <Figure src="/images/case-studies/safety-review/flow.svg" alt="Policy flow" caption="State diagram from submission to approval with handoffs." />
+  <Figure src="/images/case-studies/safety-review/policy.svg" alt="Explainability" caption="Rationale bundle: prompts, evals, risk notes." />
+  <Figure src="/images/case-studies/safety-review/dashboard-before.svg" alt="Before dashboard" caption="Before: ambiguous states, inconsistent fields." />
+</Grid>
+
+## IA
+
+- Tabs: Submissions, Reviews, Policies
+- Evidence section co-located with decisions
+
+## Interaction design
+
+- Inline diffs on model version changes
+- Reviewers propose changes; policy owner approves
+
+## Usability
+
+<Metric value="+31%" label="Throughput" /> <Metric value="-17%" label="Decision time" />
+
+## Outcomes
+
+- Reduced rework and ping-pong in handoffs
+- Clearer audit trails post-launch
+
+## Learnings
+
+- Expose uncertainty and rationale to empower better decisions.
+- Tighten the loop between policy, red team, and product.
+

@@ -1,0 +1,79 @@
+---
+title: "Internal AI Tooling for Support Agents"
+subtitle: "Reducing average handling time while improving task success at scale"
+role: "Lead Product/UX Designer"
+team: "Support Ops, Applied Engineering, Design"
+year: 2024
+duration: "6 months"
+tools: ["Figma", "Framer", "Amplitude", "TypeScript"]
+impact:
+  [
+    "-22% average handling time (AHT) in 60 days",
+    "+18% task success in usability v2",
+    "-12% transfer rate from Tier 1 to Tier 2"
+  ]
+heroImage: "/images/case-studies/ai-tooling/hero.svg"
+tags: ["research", "flows", "prototyping", "systems"]
+links:
+  [
+    { "label": "Prototype", "url": "https://example.com/proto" },
+    { "label": "Playbook", "url": "https://example.com/playbook" }
+  ]
+---
+
+<Callout intent="info">
+  <p>Context: Growth in support volume doubled complexity across intents and tools. Our goal was to help agents resolve issues faster with higher confidence.</p>
+  </Callout>
+
+## Problem
+
+Agents juggled 7+ tabs and had limited visibility into policy and the latest guidance. This increased time-to-answer and error risk.
+
+## Constraints
+
+- Security: no PII in training data
+- Reliability: degraded gracefully when model latency spiked
+- Time: 12 weeks to first production pilot
+
+## Process
+
+<Grid cols={3}>
+  <Figure src="/images/case-studies/ai-tooling/journey.svg" alt="Journey map" caption="Journey map capturing intents, pain points, and leverage points." />
+  <Figure src="/images/case-studies/ai-tooling/wireframes.svg" alt="Wireframes" caption="Explorations across guidance density and progressive disclosure." />
+  <Figure src="/images/case-studies/ai-tooling/before.svg" alt="Before UI" caption="Before: fragmented tools, poor intent recognition." />
+</Grid>
+
+## Research
+
+We ran 12 moderated sessions using real tickets. Key findings:
+- Agents trusted concise guidance with citations
+- Confidence sliders helped calibrate when to ask for help
+
+## IA
+
+- Unified navigation: Inbox, Insights, Policies
+- Consistent slots for intent, guidance, actions
+
+## Flows
+
+<Figure src="/images/case-studies/ai-tooling/after.svg" alt="After UI" caption="After: a single canvas with contextual guidance and quick actions." />
+
+## Prototypes
+
+- High-fidelity prototype in Framer tested across 3 cohorts
+- Added inline glossary and per-step guardrails
+
+## Usability
+
+<Metric value="-22%" label="AHT" /> <Metric value="+18%" label="Task success" />
+
+## Outcomes
+
+- Rolled to 300+ agents
+- Reduced handoffs by 12%
+
+## Learnings
+
+- Make model behavior legible. Citations and top-3 alternatives improved trust.
+- Show the system mental model; not just answers.
+

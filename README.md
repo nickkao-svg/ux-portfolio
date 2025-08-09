@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Avery Lee — UX Portfolio (Next.js + Tailwind + Contentlayer)
 
-## Getting Started
+Minimal, accessible, and production-ready UX portfolio using Next.js App Router, Tailwind CSS, MDX (Contentlayer), and dark mode.
 
-First, run the development server:
+## Tech
+- Next.js 14, TypeScript, App Router
+- Tailwind CSS + @tailwindcss/forms
+- Dark mode via next-themes (class)
+- MDX with Contentlayer
+- Icons: lucide-react
+- Framer Motion (ready for page transitions)
+- Prettier + ESLint
+- Vercel Analytics (opt-in)
 
+## Setup
+
+### 1) Install dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2) Dev
+```bash
+npm run dev
+```
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3) Build
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4) Lint & Format
+```bash
+npm run lint
+npm run format
+```
 
-## Learn More
+### 5) Content
+- Case studies live in `content/case-studies/*.mdx`
+- Add a new case:
+  1. Create `content/case-studies/my-new-case.mdx`
+  2. Include frontmatter:
+     ```md
+     ---
+     title: "Title"
+     subtitle: "Subtitle"
+     role: "Role"
+     team: "Team"
+     year: 2025
+     duration: "3 months"
+     tools: ["Figma"]
+     impact: ["+15% metric"]
+     heroImage: "/images/case-studies/my-new-case/hero.webp"
+     tags: ["research", "flows"]
+     links: [{ "label": "Prototype", "url": "https://..." }]
+     ---
+     ```
+  3. Use components: `<Callout>`, `<Figure>`, `<Grid>`, `<Quote>`, `<Metric>`
+  4. Add images under `public/images/case-studies/my-new-case/`
 
-To learn more about Next.js, take a look at the following resources:
+### 6) Configuration
+- Site URL: set `NEXT_PUBLIC_SITE_URL` for correct canonical/OG URLs
+- Analytics: set `NEXT_PUBLIC_ENABLE_ANALYTICS=1` to enable Vercel Analytics
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
+- Push to GitHub and import repo in Vercel
+- Set environment variables:
+  - `NEXT_PUBLIC_SITE_URL`: `https://your-domain.com`
+  - `NEXT_PUBLIC_ENABLE_ANALYTICS`: `1` (optional)
+- Vercel builds will run `contentlayer build` automatically (via postinstall)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
+- Proper landmarks, skip link, focus states
+- Keyboard navigable components
+- Color contrast >= AA
+- Reduced motion respected
 
-## Deploy on Vercel
+## Performance
+- `next/image` everywhere for images
+- Dynamic imports for MDX components
+- Optimize hero images (replace placeholders)
+- Lighthouse targets: 95+
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Print
+- `/resume` and case studies print cleanly with black/white styles
+- Use the “Download PDF” button on `/resume` to trigger native print

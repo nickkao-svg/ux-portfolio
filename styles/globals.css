@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 64px;
+}
+
+html:focus-within { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+body { @apply bg-white text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100; }
+
+.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; z-index: 50; @apply rounded-md bg-neutral-900 px-3 py-2 text-white shadow-subtle dark:bg-white dark:text-neutral-900; }
+
+.prose :where(img) { @apply rounded-lg; }
+.prose :where(a) { @apply underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-brand-500 dark:decoration-neutral-600 dark:hover:decoration-brand-400; }
+.prose :where(h2, h3, h4) a.anchor { @apply no-underline; }
+
+@media print {
+  :root { color-scheme: light; }
+  body { background: white !important; color: black !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  nav, footer, .no-print, .theme-toggle { display: none !important; }
+  a { color: black !important; text-decoration: none !important; }
+  .prose { max-width: none !important; }
+}

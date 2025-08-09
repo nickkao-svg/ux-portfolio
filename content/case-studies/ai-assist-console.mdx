@@ -1,0 +1,68 @@
+---
+title: "AI Assist Console"
+subtitle: "Triage and resolve customer tickets with AI"
+role: "Product Designer"
+team: "Support Tools · 1 PM, 2 Eng, 1 DS"
+year: 2024
+duration: "12 weeks"
+tools: ["Figma", "FigJam", "ProtoPie", "Next.js"]
+impact: ["-22% Avg Handling Time", "+17% First-Contact Resolution", "CSAT +0.3"]
+heroImage: "/images/case-studies/ai-assist/hero.svg"
+tags: ["interaction", "systems", "research"]
+links:
+  [
+    { "label": "Prototype", "url": "https://example.com/proto" },
+    { "label": "Design spec", "url": "https://example.com/spec" }
+  ]
+---
+
+## Problem
+
+Support agents were context-switching across 4 tools. Macros didn't capture edge cases, and AI suggestions were opaque.
+
+## Constraints
+
+- Security review required for PII redaction.
+- Model cost must not exceed baseline macros by >10%.
+- Ship a pilot within a quarter.
+
+## Process
+
+### Research
+
+- Shadowed 8 agents across 3 shifts; mapped pain points at hand-off and macro selection.
+- Ran a wizard-of-oz prototype to gauge trust in AI summaries.
+
+<Metric value="-22%" label="AHT" /> <Metric value="+17%" label="FCR" /> <Metric value="+0.3" label="CSAT" />
+
+### IA & Flows
+
+- Unified "Ticket → Intelligence → Action" layout.
+- Inline explainer for every AI action (why + source).
+
+<Figure src="/images/case-studies/ai-assist/flow.svg" alt="Primary flow" caption="Primary happy path flow with intervention points." />
+
+### Interaction Details
+
+- Command-K to insert rationale-backed replies.
+- Side-by-side diff for AI draft vs. agent edit.
+- "Confidence chips" switch between Precise/Helpful/Brief modes.
+
+## Usability
+
+- 12 moderated tests; time-on-task improved 18% v2→v3.
+- Key insight: trust rose when rationale fit under 140 chars.
+
+<Callout intent="success">
+  <p>Trust rose when rationale fit under 140 characters—transparency beats raw speed for expert users.</p>
+</Callout>
+
+## Outcomes
+
+- Pilot (N=46 agents) hit success criteria in week 3.
+- Rolled out progressive disclosure for costs; agents learned to pick lower-cost models for simple intents.
+
+## Learnings
+
+- Transparency beats raw speed for expert users.
+- Rationale density needs hard limits to avoid skim fatigue.

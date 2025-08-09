@@ -1,0 +1,42 @@
+{
+  "name": "Avery Lee",
+  "title": "Product/UX Designer",
+  "location": "Austin, TX",
+  "email": "avery.lee@example.com",
+  "links": [
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/averylee" },
+    { "label": "GitHub", "url": "https://github.com/averylee" }
+  ],
+  "summary": "Product/UX designer focused on AI tooling and safety workflows. I combine systems thinking, strong IA, and prototyping to drive measurable outcomes.",
+  "skills": [
+    "Research",
+    "Information Architecture",
+    "Interaction Design",
+    "Prototyping",
+    "Design Systems",
+    "Accessibility"
+  ],
+  "experience": [
+    {
+      "company": "OpenAI",
+      "role": "Product/UX Designer",
+      "period": "2022–Present",
+      "highlights": [
+        "Led design for internal AI tooling used by 300+ support agents",
+        "Drove -22% AHT and +18% task success through iterative usability"
+      ]
+    },
+    {
+      "company": "Acme Systems",
+      "role": "Product Designer",
+      "period": "2019–2022",
+      "highlights": [
+        "Built unified design system across 7 products",
+        "Shipped policy review UI with explainability affordances"
+      ]
+    }
+  ],
+  "education": [
+    { "school": "UT Austin", "degree": "B.S. Human-Computer Interaction", "year": "2019" }
+  ]
+}
