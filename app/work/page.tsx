@@ -1,5 +1,5 @@
-import { allCaseStudies } from "contentlayer/generated";
-import { CaseStudyCard } from "@/components/CaseStudyCard";
+import { allCaseStudies } from 'contentlayer/generated';
+import { CaseStudyCard } from '@/components/CaseStudyCard';
 
 export default function WorkPage() {
   return (

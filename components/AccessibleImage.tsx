@@ -1,8 +1,10 @@
-import Image, { type ImageProps } from "next/image";
+import Image, { type ImageProps } from 'next/image';
 
-type Props = ImageProps & { caption?: string };
+interface AccessibleImageProps extends ImageProps {
+  caption?: string;
+}
 
-export default function AccessibleImage({ caption, ...props }: Props) {
+export default function AccessibleImage({ caption, ...props }: AccessibleImageProps) {
   return (
     <figure className="my-6">
       <Image {...props} />

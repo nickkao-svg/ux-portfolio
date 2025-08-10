@@ -1,4 +1,172 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
-  <rect width="1600" height="600" fill="#fef3c7"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="36" font-family="Arial" fill="#7c2d12">Policy Review Flow</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="startGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="reviewGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="redTeamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="approvalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="endGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">Policy Review Workflow - State Diagram</text>
+  
+  <!-- Start: Policy Submission -->
+  <ellipse cx="200" cy="120" rx="80" ry="40" fill="url(#startGradient)"/>
+  <text x="200" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Policy</text>
+  <text x="200" y="140" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Submission</text>
+  
+  <!-- Initial Review -->
+  <rect x="400" y="90" width="120" height="60" rx="8" fill="url(#reviewGradient)"/>
+  <text x="460" y="115" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Initial Review</text>
+  <text x="460" y="130" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Policy Team</text>
+  
+  <!-- Decision: Pass to Red Team? -->
+  <polygon points="600,120 680,90 760,120 680,150" fill="#f59e0b"/>
+  <text x="680" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Pass to</text>
+  <text x="680" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Red Team?</text>
+  
+  <!-- Yes: Red Team Review -->
+  <rect x="800" y="90" width="120" height="60" rx="8" fill="url(#redTeamGradient)"/>
+  <text x="860" y="115" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Red Team</text>
+  <text x="860" y="130" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Review</text>
+  
+  <!-- No: Reject -->
+  <ellipse cx="600" cy="200" rx="80" ry="40" fill="#ef4444"/>
+  <text x="600" y="205" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Reject</text>
+  <text x="600" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Policy</text>
+  
+  <!-- Red Team Decision -->
+  <polygon points="1000,120 1080,90 1160,120 1080,150" fill="#f59e0b"/>
+  <text x="1080" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Approve</text>
+  <text x="1080" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Red Team?</text>
+  
+  <!-- Yes: Final Approval -->
+  <rect x="1200" y="90" width="120" height="60" rx="8" fill="url(#approvalGradient)"/>
+  <text x="1260" y="115" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Final</text>
+  <text x="1260" y="130" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Approval</text>
+  
+  <!-- No: Request Changes -->
+  <rect x="1000" y="200" width="120" height="60" rx="8" fill="#f59e0b"/>
+  <text x="1060" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Request</text>
+  <text x="1060" y="240" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Changes</text>
+  
+  <!-- Final Decision -->
+  <polygon points="1320,120 1400,90 1480,120 1400,150" fill="#f59e0b"/>
+  <text x="1400" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Approve</text>
+  <text x="1400" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Final?</text>
+  
+  <!-- Yes: Implementation -->
+  <ellipse cx="1400" cy="200" rx="80" ry="40" fill="url(#endGradient)"/>
+  <text x="1400" y="205" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Implement</text>
+  <text x="1400" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Policy</text>
+  
+  <!-- No: Escalate -->
+  <rect x="1320" y="200" width="120" height="60" rx="8" fill="#ef4444"/>
+  <text x="1380" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Escalate</text>
+  <text x="1380" y="240" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">to Exec</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Flow arrows -->
+  <line x1="280" y1="120" x2="400" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="520" y1="120" x2="600" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="150" x2="680" y2="200" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="720" y1="120" x2="800" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="920" y1="120" x2="1000" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1080" y1="150" x2="1080" y2="200" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1120" y1="120" x2="1200" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1320" y1="120" x2="1400" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1400" y1="150" x2="1400" y2="200" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1360" y1="200" x2="1320" y2="200" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Labels -->
+  <text x="340" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Review</text>
+  <text x="640" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Check</text>
+  <text x="740" y="180" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  <text x="840" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  <text x="940" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  <text x="1080" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  <text x="1180" y="370" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Approve</text>
+  <text x="1280" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Check</text>
+  <text x="1320" y="180" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  <text x="1320" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  
+  <!-- Handoff points -->
+  <rect x="50" y="300" width="1100" height="200" fill="#ffffff" rx="12" stroke="#e2e8f0"/>
+  <text x="600" y="330" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b" text-anchor="middle">Handoff Points & Explainability</text>
+  
+  <!-- Handoff 1 -->
+  <rect x="80" y="350" width="250" height="120" fill="#f8fafc" rx="8"/>
+  <text x="205" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Policy → Red Team</text>
+  <text x="205" y="395" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Risk assessment summary</text>
+  <text x="205" y="410" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Compliance checklist</text>
+  <text x="205" y="425" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Previous similar cases</text>
+  <text x="205" y="440" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Uncertainty factors</text>
+  <text x="205" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Recommended actions</text>
+  
+  <!-- Handoff 2 -->
+  <rect x="350" y="350" width="250" height="120" fill="#f8fafc" rx="8"/>
+  <text x="475" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Red Team → Final</text>
+  <text x="475" y="395" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Security assessment</text>
+  <text x="475" y="410" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Attack vector analysis</text>
+  <text x="475" y="425" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Mitigation strategies</text>
+  <text x="475" y="440" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Confidence level</text>
+  <text x="475" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Residual risks</text>
+  
+  <!-- Handoff 3 -->
+  <rect x="650" y="350" width="250" height="120" fill="#f8fafc" rx="8"/>
+  <text x="775" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Final → Implementation</text>
+  <text x="775" y="395" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Executive approval</text>
+  <text x="775" y="410" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Rollout plan</text>
+  <text x="775" y="425" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Monitoring strategy</text>
+  <text x="775" y="440" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Success metrics</text>
+  <text x="775" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Rollback procedures</text>
+  
+  <!-- Handoff 4 -->
+  <rect x="950" y="350" width="200" height="120" fill="#f8fafc" rx="8"/>
+  <text x="1050" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Rejection/Changes</text>
+  <text x="1050" y="395" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Specific feedback</text>
+  <text x="1050" y="410" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Required modifications</text>
+  <text x="1050" y="425" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Timeline expectations</text>
+  <text x="1050" y="440" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Resubmission process</text>
+  <text x="1050" y="455" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">• Escalation path</text>
+  
+  <!-- Key insights -->
+  <rect x="50" y="520" width="1100" height="120" fill="#f0fdf4" rx="12"/>
+  <text x="600" y="550" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#166534" text-anchor="middle">Key Insights & Improvements</text>
+  
+  <text x="100" y="580" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Structured handoffs reduce ping-pong between teams</text>
+  <text x="100" y="600" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Explainability artifacts improve transparency and trust</text>
+  <text x="100" y="620" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Clear audit trails ensure compliance and accountability</text>
+  
+  <text x="600" y="580" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Uncertainty exposure empowers better decision making</text>
+  <text x="600" y="600" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Automated state tracking reduces manual coordination</text>
+  <text x="600" y="620" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Standardized templates improve consistency</text>
 </svg>

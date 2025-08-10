@@ -1,4 +1,98 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#f0f9ff"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="48" font-family="Arial" fill="#0c4a6e">AI Assist Console – Hero</text>
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGradient)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1600" height="80" fill="url(#headerGradient)"/>
+  <text x="40" y="50" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#ffffff">AI Assist Console</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="80" width="300" height="820" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  
+  <!-- Sidebar items -->
+  <rect x="20" y="120" width="260" height="50" rx="8" fill="#3b82f6"/>
+  <text x="40" y="150" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="#ffffff">Active Tickets</text>
+  
+  <rect x="20" y="190" width="260" height="50" rx="8" fill="#f1f5f9"/>
+  <text x="40" y="220" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="#475569">Resolved</text>
+  
+  <rect x="20" y="260" width="260" height="50" rx="8" fill="#f1f5f9"/>
+  <text x="40" y="290" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="500" fill="#475569">Analytics</text>
+  
+  <!-- Main content area -->
+  <rect x="320" y="100" width="1260" height="780" fill="#ffffff" rx="12"/>
+  
+  <!-- Ticket header -->
+  <rect x="340" y="120" width="1220" height="80" fill="#f8fafc" rx="8"/>
+  <text x="360" y="150" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b">Ticket #SR-2024-001</text>
+  <text x="360" y="175" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">Customer: John Smith • Priority: High • Status: In Progress</text>
+  
+  <!-- AI Assistant panel -->
+  <rect x="340" y="220" width="400" height="300" fill="url(#aiGradient)" rx="12"/>
+  <text x="360" y="250" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff">🤖 AI Assistant</text>
+  
+  <!-- AI suggestions -->
+  <rect x="360" y="270" width="360" height="60" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="380" y="295" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1e293b">Suggested Response:</text>
+  <text x="380" y="315" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">"I understand your concern about the billing issue..."</text>
+  
+  <rect x="360" y="350" width="360" height="60" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="380" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1e293b">Confidence: 94%</text>
+  <text x="380" y="395" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Based on similar cases and policy guidelines</text>
+  
+  <!-- Customer message area -->
+  <rect x="760" y="220" width="800" height="300" fill="#f8fafc" rx="12"/>
+  <text x="780" y="250" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">Customer Message</text>
+  
+  <rect x="780" y="270" width="760" height="120" fill="#ffffff" rx="8"/>
+  <text x="800" y="295" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1e293b">"Hi, I've been charged twice for my subscription this month.</text>
+  <text x="800" y="315" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1e293b">I only signed up once and I'm seeing two charges on my</text>
+  <text x="800" y="335" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#1e293b">credit card statement. Can you help me resolve this?"</text>
+  
+  <!-- Response area -->
+  <rect x="780" y="410" width="760" height="80" fill="#ffffff" rx="8"/>
+  <text x="800" y="435" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#64748b">Type your response here...</text>
+  
+  <!-- Action buttons -->
+  <rect x="340" y="540" width="120" height="40" fill="#10b981" rx="8"/>
+  <text x="390" y="565" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#ffffff" text-anchor="middle">Send</text>
+  
+  <rect x="480" y="540" width="120" height="40" fill="#3b82f6" rx="8"/>
+  <text x="530" y="565" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#ffffff" text-anchor="middle">Use AI</text>
+  
+  <!-- Metrics -->
+  <rect x="340" y="600" width="1220" height="120" fill="#f8fafc" rx="12"/>
+  <text x="360" y="630" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">Performance Metrics</text>
+  
+  <rect x="360" y="650" width="200" height="60" fill="#ffffff" rx="8"/>
+  <text x="410" y="675" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#10b981" text-anchor="middle">-22%</text>
+  <text x="410" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Avg Handling Time</text>
+  
+  <rect x="580" y="650" width="200" height="60" fill="#ffffff" rx="8"/>
+  <text x="630" y="675" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#3b82f6" text-anchor="middle">+17%</text>
+  <text x="630" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">First Contact Resolution</text>
+  
+  <rect x="800" y="650" width="200" height="60" fill="#ffffff" rx="8"/>
+  <text x="850" y="675" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#f59e0b" text-anchor="middle">+0.3</text>
+  <text x="850" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">CSAT Score</text>
+  
+  <!-- Floating elements -->
+  <circle cx="1400" cy="200" r="40" fill="#3b82f6" opacity="0.1"/>
+  <circle cx="1500" cy="300" r="30" fill="#10b981" opacity="0.1"/>
+  <circle cx="1450" cy="400" r="25" fill="#f59e0b" opacity="0.1"/>
 </svg>

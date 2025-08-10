@@ -1,4 +1,9 @@
-export default function Metric({ value, label }: { value: string; label: string }) {
+interface MetricProps {
+  value: string;
+  label: string;
+}
+
+export default function Metric({ value, label }: MetricProps) {
   return (
     <div className="rounded-lg border border-neutral-200 bg-white p-4 text-center dark:border-neutral-800 dark:bg-neutral-900">
       <div className="text-2xl font-semibold">{value}</div>

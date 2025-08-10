@@ -1,4 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
-  <rect width="1600" height="600" fill="#fefce8"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="36" font-family="Arial" fill="#713f12">Primary Flow with Intervention Points</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="startGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="decisionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="endGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">AI Assist Console - Primary Flow</text>
+  
+  <!-- Start: Ticket Received -->
+  <ellipse cx="200" cy="120" rx="80" ry="40" fill="url(#startGradient)"/>
+  <text x="200" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Ticket</text>
+  <text x="200" y="140" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Received</text>
+  
+  <!-- AI Analysis -->
+  <rect x="400" y="90" width="120" height="60" rx="8" fill="url(#aiGradient)"/>
+  <text x="460" y="115" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">AI Analysis</text>
+  <text x="460" y="130" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Intent + Context</text>
+  
+  <!-- Decision: Auto-resolve? -->
+  <polygon points="600,120 680,90 760,120 680,150" fill="url(#decisionGradient)"/>
+  <text x="680" y="125" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Auto-</text>
+  <text x="680" y="140" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">resolve?</text>
+  
+  <!-- Yes path: Auto-resolve -->
+  <rect x="800" y="90" width="120" height="60" rx="8" fill="#10b981"/>
+  <text x="860" y="115" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Auto-resolve</text>
+  <text x="860" y="130" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Send Response</text>
+  
+  <!-- No path: Agent Review -->
+  <rect x="600" y="200" width="120" height="60" rx="8" fill="#f59e0b"/>
+  <text x="660" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Agent</text>
+  <text x="660" y="240" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Review</text>
+  
+  <!-- AI Suggestions -->
+  <rect x="800" y="200" width="120" height="60" rx="8" fill="url(#aiGradient)"/>
+  <text x="860" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">AI Suggestions</text>
+  <text x="860" y="240" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Response + Actions</text>
+  
+  <!-- Agent Decision -->
+  <polygon points="1000,230 1080,200 1160,230 1080,260" fill="url(#decisionGradient)"/>
+  <text x="1080" y="235" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Accept</text>
+  <text x="1080" y="250" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">AI?</text>
+  
+  <!-- Accept AI -->
+  <rect x="1200" y="200" width="120" height="60" rx="8" fill="#10b981"/>
+  <text x="1260" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Send AI</text>
+  <text x="1260" y="240" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Response</text>
+  
+  <!-- Manual Edit -->
+  <rect x="1000" y="310" width="120" height="60" rx="8" fill="#f59e0b"/>
+  <text x="1060" y="335" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Manual Edit</text>
+  <text x="1060" y="350" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ffffff" text-anchor="middle">Customize</text>
+  
+  <!-- Send Response -->
+  <rect x="1200" y="310" width="120" height="60" rx="8" fill="#3b82f6"/>
+  <text x="1260" y="335" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Send</text>
+  <text x="1260" y="350" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Response</text>
+  
+  <!-- Follow-up Decision -->
+  <polygon points="1080,400 1160,370 1240,400 1160,430" fill="url(#decisionGradient)"/>
+  <text x="1160" y="405" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Follow-up</text>
+  <text x="1160" y="420" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">needed?</text>
+  
+  <!-- Yes: Escalate -->
+  <rect x="1200" y="480" width="120" height="60" rx="8" fill="#f59e0b"/>
+  <text x="1260" y="505" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Escalate</text>
+  <text x="1260" y="520" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">to Tier 2</text>
+  
+  <!-- No: Resolve -->
+  <ellipse cx="1080" cy="540" rx="80" ry="40" fill="url(#endGradient)"/>
+  <text x="1080" y="545" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Resolve</text>
+  <text x="1080" y="560" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Ticket</text>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Flow arrows -->
+  <line x1="280" y1="120" x2="400" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="520" y1="120" x2="600" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="150" x2="680" y2="200" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="720" y1="120" x2="800" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="720" y1="230" x2="800" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="920" y1="230" x2="1000" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1080" y1="260" x2="1080" y2="310" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1120" y1="230" x2="1200" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1120" y1="370" x2="1200" y2="370" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1160" y1="430" x2="1160" y2="480" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1160" y1="540" x2="1160" y2="500" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1120" y1="540" x2="1000" y2="540" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Labels -->
+  <text x="340" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Analyze</text>
+  <text x="640" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Check</text>
+  <text x="740" y="180" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  <text x="840" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  <text x="940" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Suggest</text>
+  <text x="1040" y="290" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  <text x="1160" y="110" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  <text x="1180" y="370" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Send</text>
+  <text x="1200" y="470" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">Yes</text>
+  <text x="1000" y="530" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">No</text>
+  
+  <!-- Metrics boxes -->
+  <rect x="50" y="650" width="200" height="80" fill="#ffffff" rx="8" stroke="#e2e8f0"/>
+  <text x="150" y="675" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Intervention Points</text>
+  <text x="150" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• AI Analysis</text>
+  <text x="150" y="710" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Agent Review</text>
+  <text x="150" y="725" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Manual Override</text>
+  
+  <rect x="300" y="650" width="200" height="80" fill="#ffffff" rx="8" stroke="#e2e8f0"/>
+  <text x="400" y="675" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Success Metrics</text>
+  <text x="400" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• -22% AHT</text>
+  <text x="400" y="710" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• +17% FCR</text>
+  <text x="400" y="725" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• +0.3 CSAT</text>
 </svg>

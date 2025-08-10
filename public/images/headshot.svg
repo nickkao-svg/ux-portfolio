@@ -1,6 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
-  <rect width="800" height="800" fill="#e5e7eb"/>
-  <circle cx="400" cy="280" r="120" fill="#cbd5e1"/>
-  <rect x="220" y="430" width="360" height="260" rx="40" fill="#cbd5e1"/>
-  <text x="50%" y="770" text-anchor="middle" font-family="Arial" font-size="28" fill="#6b7280">Headshot Placeholder</text>
-  </svg>
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Head -->
+  <circle cx="400" cy="280" r="140" fill="url(#faceGradient)"/>
+  
+  <!-- Hair -->
+  <path d="M260 200 Q400 120 540 200 Q520 180 480 160 Q400 140 320 160 Q280 180 260 200" fill="#1f2937"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="370" cy="260" rx="12" ry="8" fill="#1f2937"/>
+  <ellipse cx="430" cy="260" rx="12" ry="8" fill="#1f2937"/>
+  <ellipse cx="370" cy="258" rx="4" ry="4" fill="#ffffff"/>
+  <ellipse cx="430" cy="258" rx="4" ry="4" fill="#ffffff"/>
+  
+  <!-- Nose -->
+  <ellipse cx="400" cy="280" rx="6" ry="8" fill="#f59e0b"/>
+  
+  <!-- Mouth -->
+  <path d="M380 300 Q400 310 420 300" stroke="#1f2937" stroke-width="2" fill="none"/>
+  
+  <!-- Body -->
+  <rect x="280" y="420" width="240" height="300" rx="20" fill="#ffffff"/>
+  
+  <!-- Collar -->
+  <rect x="300" y="420" width="200" height="40" rx="20" fill="#3b82f6"/>
+  
+  <!-- Design elements -->
+  <circle cx="200" cy="150" r="30" fill="#ffffff" opacity="0.1"/>
+  <circle cx="600" cy="200" r="20" fill="#ffffff" opacity="0.1"/>
+  <circle cx="650" cy="400" r="25" fill="#ffffff" opacity="0.1"/>
+</svg>

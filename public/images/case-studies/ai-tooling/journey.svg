@@ -1,4 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
-  <rect width="1600" height="600" fill="#f1f5f9"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="36" font-family="Arial" fill="#334155">Support Agent Journey Map</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phase1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phase2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phase3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="phase4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">Support Agent Journey Map</text>
+  
+  <!-- Phase 1: Ticket Assignment -->
+  <rect x="50" y="80" width="250" height="600" fill="url(#phase1Gradient)" rx="12"/>
+  <text x="175" y="110" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Phase 1</text>
+  <text x="175" y="130" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Ticket Assignment</text>
+  
+  <!-- Phase 1 activities -->
+  <rect x="70" y="160" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="175" y="185" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Receive Ticket</text>
+  <text x="175" y="205" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Notification alert</text>
+  <text x="175" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Basic customer info</text>
+  <text x="175" y="235" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Priority level</text>
+  
+  <rect x="70" y="260" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="175" y="285" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Initial Assessment</text>
+  <text x="175" y="305" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Read customer message</text>
+  <text x="175" y="320" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Identify intent</text>
+  <text x="175" y="335" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Check urgency</text>
+  
+  <!-- Pain points -->
+  <rect x="70" y="360" width="210" height="60" fill="#fef2f2" rx="8"/>
+  <text x="175" y="385" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#dc2626" text-anchor="middle">Pain Points</text>
+  <text x="175" y="405" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Limited context</text>
+  
+  <!-- Phase 2: Research & Context -->
+  <rect x="320" y="80" width="250" height="600" fill="url(#phase2Gradient)" rx="12"/>
+  <text x="445" y="110" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Phase 2</text>
+  <text x="445" y="130" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Research & Context</text>
+  
+  <!-- Phase 2 activities -->
+  <rect x="340" y="160" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="445" y="185" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Customer History</text>
+  <text x="445" y="205" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Previous tickets</text>
+  <text x="445" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Account details</text>
+  <text x="445" y="235" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Billing info</text>
+  
+  <rect x="340" y="260" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="445" y="285" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Policy Lookup</text>
+  <text x="445" y="305" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Search guidelines</text>
+  <text x="445" y="320" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Check procedures</text>
+  <text x="445" y="335" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Find templates</text>
+  
+  <!-- Pain points -->
+  <rect x="340" y="360" width="210" height="80" fill="#fef2f2" rx="8"/>
+  <text x="445" y="385" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#dc2626" text-anchor="middle">Pain Points</text>
+  <text x="445" y="405" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Multiple tabs</text>
+  <text x="445" y="420" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Poor search</text>
+  <text x="445" y="435" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Outdated info</text>
+  
+  <!-- Phase 3: Solution Development -->
+  <rect x="590" y="80" width="250" height="600" fill="url(#phase3Gradient)" rx="12"/>
+  <text x="715" y="110" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Phase 3</text>
+  <text x="715" y="130" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Solution Development</text>
+  
+  <!-- Phase 3 activities -->
+  <rect x="610" y="160" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="715" y="185" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Draft Response</text>
+  <text x="715" y="205" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Write reply</text>
+  <text x="715" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Include solutions</text>
+  <text x="715" y="235" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Add next steps</text>
+  
+  <rect x="610" y="260" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="715" y="285" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Action Planning</text>
+  <text x="715" y="305" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Determine actions</text>
+  <text x="715" y="320" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Check permissions</text>
+  <text x="715" y="335" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Plan follow-up</text>
+  
+  <!-- Pain points -->
+  <rect x="610" y="360" width="210" height="80" fill="#fef2f2" rx="8"/>
+  <text x="715" y="385" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#dc2626" text-anchor="middle">Pain Points</text>
+  <text x="715" y="405" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• No templates</text>
+  <text x="715" y="420" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Manual actions</text>
+  <text x="715" y="435" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Time consuming</text>
+  
+  <!-- Phase 4: Resolution -->
+  <rect x="860" y="80" width="250" height="600" fill="url(#phase4Gradient)" rx="12"/>
+  <text x="985" y="110" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">Phase 4</text>
+  <text x="985" y="130" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Resolution</text>
+  
+  <!-- Phase 4 activities -->
+  <rect x="880" y="160" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="985" y="185" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Send Response</text>
+  <text x="985" y="205" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Review content</text>
+  <text x="985" y="220" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Send to customer</text>
+  <text x="985" y="235" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Update status</text>
+  
+  <rect x="880" y="260" width="210" height="80" fill="#ffffff" opacity="0.9" rx="8"/>
+  <text x="985" y="285" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Follow-up</text>
+  <text x="985" y="305" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Monitor response</text>
+  <text x="985" y="320" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Escalate if needed</text>
+  <text x="985" y="335" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Close ticket</text>
+  
+  <!-- Pain points -->
+  <rect x="880" y="360" width="210" height="60" fill="#fef2f2" rx="8"/>
+  <text x="985" y="385" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#dc2626" text-anchor="middle">Pain Points</text>
+  <text x="985" y="405" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">• Manual tracking</text>
+  
+  <!-- Emotional journey line -->
+  <path d="M 100 500 Q 300 450 550 480 Q 800 520 1050 500" stroke="#64748b" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
+  
+  <!-- Emotional states -->
+  <circle cx="100" cy="500" r="8" fill="#3b82f6"/>
+  <text x="100" y="520" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Frustrated</text>
+  
+  <circle cx="300" cy="450" r="8" fill="#f59e0b"/>
+  <text x="300" y="470" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Overwhelmed</text>
+  
+  <circle cx="550" cy="480" r="8" fill="#10b981"/>
+  <text x="550" y="500" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Confident</text>
+  
+  <circle cx="800" cy="520" r="8" fill="#ef4444"/>
+  <text x="800" y="540" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Stressed</text>
+  
+  <circle cx="1050" cy="500" r="8" fill="#10b981"/>
+  <text x="1050" y="520" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Relieved</text>
+  
+  <!-- Key insights -->
+  <rect x="50" y="650" width="1100" height="120" fill="#ffffff" rx="12" stroke="#e2e8f0"/>
+  <text x="600" y="680" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Key Insights & Opportunities</text>
+  
+  <text x="100" y="710" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• Agents spend 40% of time context-switching between tools</text>
+  <text x="100" y="730" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• Policy lookup takes 3-5 minutes per ticket</text>
+  <text x="100" y="750" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• Manual actions reduce confidence and increase errors</text>
+  
+  <text x="600" y="710" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• AI can pre-populate context and suggestions</text>
+  <text x="600" y="730" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• Unified interface reduces cognitive load</text>
+  <text x="600" y="750" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">• Automated actions increase efficiency</text>
 </svg>

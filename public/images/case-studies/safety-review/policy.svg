@@ -1,4 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
-  <rect width="1600" height="600" fill="#fffbeb"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="36" font-family="Arial" fill="#7c2d12">Explainability Artifacts</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="rationaleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">Explainability Artifacts - Rationale Bundle</text>
+  
+  <!-- Main container -->
+  <rect x="50" y="80" width="1100" height="680" fill="#ffffff" rx="12"/>
+  
+  <!-- Header -->
+  <rect x="70" y="100" width="1060" height="60" fill="url(#rationaleGradient)" rx="8"/>
+  <text x="600" y="130" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#ffffff" text-anchor="middle">Policy: AI Content Moderation - Explainability Dashboard</text>
+  <text x="600" y="150" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle">Confidence: 87% • Uncertainty: Low • Risk Level: Medium</text>
+  
+  <!-- Left column: Decision Factors -->
+  <rect x="80" y="180" width="500" height="560" fill="#f8fafc" rx="8"/>
+  <text x="330" y="210" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Decision Factors & Rationale</text>
+  
+  <!-- Factor 1: Risk Assessment -->
+  <rect x="100" y="230" width="460" height="100" fill="#ffffff" rx="8"/>
+  <text x="330" y="255" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Risk Assessment</text>
+  <text x="330" y="275" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Impact: Medium • Probability: Low</text>
+  <text x="330" y="295" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Mitigation: Automated filtering with human oversight</text>
+  <text x="330" y="315" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Residual Risk: Acceptable within tolerance</text>
+  
+  <!-- Factor 2: Compliance Check -->
+  <rect x="100" y="350" width="460" height="100" fill="#ffffff" rx="8"/>
+  <text x="330" y="375" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Compliance & Legal</text>
+  <text x="330" y="395" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">GDPR: Compliant • CCPA: Compliant</text>
+  <text x="330" y="415" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Data Retention: 30 days • User Consent: Required</text>
+  <text x="330" y="435" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Audit Trail: Complete • Right to Appeal: Available</text>
+  
+  <!-- Factor 3: Technical Feasibility -->
+  <rect x="100" y="470" width="460" height="100" fill="#ffffff" rx="8"/>
+  <text x="330" y="495" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Technical Implementation</text>
+  <text x="330" y="515" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Model Accuracy: 94% • False Positive Rate: 2%</text>
+  <text x="330" y="535" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Latency: <100ms • Scalability: 10M+ requests/day</text>
+  <text x="330" y="555" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Rollback Capability: Immediate • Monitoring: Real-time</text>
+  
+  <!-- Factor 4: Business Impact -->
+  <rect x="100" y="590" width="460" height="100" fill="#ffffff" rx="8"/>
+  <text x="330" y="615" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Business Impact & ROI</text>
+  <text x="330" y="635" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Cost Reduction: 40% vs manual review</text>
+  <text x="330" y="655" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Response Time: 95% faster • Coverage: 100% of content</text>
+  <text x="330" y="675" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">User Experience: Improved • Brand Safety: Enhanced</text>
+  
+  <!-- Right column: Evidence & Citations -->
+  <rect x="600" y="180" width="520" height="560" fill="#f8fafc" rx="8"/>
+  <text x="860" y="210" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Evidence & Citations</text>
+  
+  <!-- Previous Cases -->
+  <rect x="620" y="230" width="480" height="120" fill="#ffffff" rx="8"/>
+  <text x="860" y="255" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Previous Similar Policies</text>
+  <text x="860" y="275" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Spam Detection (2023): 98% success rate, 0.1% false positives</text>
+  <text x="860" y="295" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Hate Speech Filter (2023): 96% accuracy, 0.5% false positives</text>
+  <text x="860" y="315" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Adult Content Filter (2022): 99% precision, 0.2% false positives</text>
+  <text x="860" y="335" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Average deployment time: 2 weeks • Average ROI: 300%</text>
+  
+  <!-- Research & Benchmarks -->
+  <rect x="620" y="370" width="480" height="120" fill="#ffffff" rx="8"/>
+  <text x="860" y="395" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Research & Industry Benchmarks</text>
+  <text x="860" y="415" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Industry average accuracy: 89% (we exceed by 5%)</text>
+  <text x="860" y="435" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Peer company benchmarks: Meta (92%), Google (91%), Twitter (88%)</text>
+  <text x="860" y="455" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Academic research: Stanford study on content moderation (2023)</text>
+  <text x="860" y="475" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Regulatory guidance: FTC recommendations on AI transparency</text>
+  
+  <!-- Stakeholder Feedback -->
+  <rect x="620" y="510" width="480" height="120" fill="#ffffff" rx="8"/>
+  <text x="860" y="535" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Stakeholder Feedback & Concerns</text>
+  <text x="860" y="555" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Legal Team: ✅ No concerns, compliant with regulations</text>
+  <text x="860" y="575" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Privacy Team: ✅ Data minimization principles followed</text>
+  <text x="860" y="595" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Product Team: ✅ Aligns with user experience goals</text>
+  <text x="860" y="615" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">• Engineering Team: ✅ Technically feasible, resources available</text>
+  
+  <!-- Uncertainty Factors -->
+  <rect x="620" y="650" width="480" height="80" fill="#fef3c7" rx="8"/>
+  <text x="860" y="675" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#92400e" text-anchor="middle">Uncertainty Factors & Mitigation</text>
+  <text x="860" y="695" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">• Cultural bias: Mitigated by diverse training data and human oversight</text>
+  <text x="860" y="715" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">• Evolving content patterns: Addressed by continuous model updates</text>
+  
+  <!-- Confidence indicators -->
+  <rect x="80" y="760" width="1100" height="80" fill="#f0fdf4" rx="12"/>
+  <text x="600" y="790" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#166534" text-anchor="middle">Confidence Assessment & Recommendations</text>
+  
+  <text x="100" y="820" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Overall Confidence: 87% (High) • Risk Level: Medium (Acceptable)</text>
+  <text x="100" y="840" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Recommendation: APPROVE with monitoring and phased rollout</text>
+  
+  <text x="600" y="820" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Key Success Factors: Human oversight, regular audits, user feedback</text>
+  <text x="600" y="840" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Rollback Triggers: Accuracy <90%, False positives >3%, User complaints >5%</text>
 </svg>

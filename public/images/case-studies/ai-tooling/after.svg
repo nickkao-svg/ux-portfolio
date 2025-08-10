@@ -1,4 +1,138 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#f0fdf4"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="42" font-family="Arial" fill="#065f46">After</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">After: Single Canvas with Contextual Guidance and Quick Actions</text>
+  
+  <!-- Main interface -->
+  <rect x="50" y="80" width="1100" height="680" fill="#ffffff" rx="12"/>
+  
+  <!-- Top navigation -->
+  <rect x="70" y="100" width="1060" height="50" fill="#f8fafc" rx="8"/>
+  <rect x="80" y="115" width="80" height="30" fill="#8b5cf6" rx="6"/>
+  <text x="120" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Inbox</text>
+  
+  <rect x="170" y="115" width="80" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="210" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569" text-anchor="middle">Insights</text>
+  
+  <rect x="260" y="115" width="80" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="300" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569" text-anchor="middle">Policies</text>
+  
+  <!-- AI Assistant Panel -->
+  <rect x="70" y="170" width="350" height="200" fill="url(#aiGradient)" rx="12"/>
+  <text x="245" y="195" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#ffffff" text-anchor="middle">🤖 AI Assistant</text>
+  
+  <!-- Intent detection -->
+  <rect x="85" y="210" width="320" height="40" fill="#ffffff" opacity="0.9" rx="6"/>
+  <text x="245" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Intent Detected: Billing Inquiry</text>
+  <text x="245" y="240" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Confidence: 94%</text>
+  
+  <!-- Suggested actions -->
+  <rect x="85" y="260" width="320" height="50" fill="#ffffff" opacity="0.9" rx="6"/>
+  <text x="245" y="275" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Suggested Actions:</text>
+  <text x="245" y="290" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">• Check billing history • Process refund if duplicate</text>
+  
+  <!-- Policy guidance -->
+  <rect x="85" y="320" width="320" height="40" fill="#ffffff" opacity="0.9" rx="6"/>
+  <text x="245" y="335" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Policy: Refund within 24h for duplicates</text>
+  <text x="245" y="350" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Source: Billing Policy v2.1</text>
+  
+  <!-- Customer Context Panel -->
+  <rect x="440" y="170" width="350" height="200" fill="#f8fafc" rx="12"/>
+  <text x="615" y="195" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Customer Context</text>
+  
+  <!-- Customer info -->
+  <rect x="455" y="210" width="320" height="80" fill="#ffffff" rx="6"/>
+  <text x="615" y="230" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">John Smith</text>
+  <text x="615" y="250" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Customer since: Jan 2023 • Plan: Pro ($29/month)</text>
+  <text x="615" y="265" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Previous tickets: 2 (resolved) • Risk level: Low</text>
+  <text x="615" y="280" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b" text-anchor="middle">Last contact: 3 days ago</text>
+  
+  <!-- Billing info -->
+  <rect x="455" y="300" width="320" height="60" fill="#ffffff" rx="6"/>
+  <text x="615" y="320" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Recent Charges</text>
+  <text x="615" y="340" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Jan 15: $29.00 • Jan 15: $29.00 (duplicate detected)</text>
+  
+  <!-- Main Workspace -->
+  <rect x="810" y="170" width="320" height="200" fill="#f8fafc" rx="12"/>
+  <text x="970" y="195" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Workspace</text>
+  
+  <!-- Customer message -->
+  <rect x="825" y="210" width="290" height="80" fill="#ffffff" rx="6"/>
+  <text x="970" y="230" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Customer Message</text>
+  <text x="970" y="250" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#1e293b" text-anchor="middle">"I've been charged twice for my subscription..."</text>
+  
+  <!-- Response area -->
+  <rect x="825" y="300" width="290" height="60" fill="#ffffff" rx="6"/>
+  <text x="970" y="320" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">Your Response</text>
+  <text x="970" y="340" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Type your response here...</text>
+  
+  <!-- Quick Actions Bar -->
+  <rect x="70" y="390" width="1060" height="80" fill="#f8fafc" rx="12"/>
+  <text x="600" y="415" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b" text-anchor="middle">Quick Actions</text>
+  
+  <rect x="80" y="425" width="120" height="35" fill="#10b981" rx="8"/>
+  <text x="140" y="447" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Check Billing</text>
+  
+  <rect x="220" y="425" width="120" height="35" fill="#3b82f6" rx="8"/>
+  <text x="280" y="447" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Process Refund</text>
+  
+  <rect x="360" y="425" width="120" height="35" fill="#f59e0b" rx="8"/>
+  <text x="420" y="447" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Escalate</text>
+  
+  <rect x="500" y="425" width="120" height="35" fill="#8b5cf6" rx="8"/>
+  <text x="560" y="447" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">AI Draft Response</text>
+  
+  <rect x="640" y="425" width="120" height="35" fill="#ef4444" rx="8"/>
+  <text x="700" y="447" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#ffffff" text-anchor="middle">Send Response</text>
+  
+  <!-- Performance Metrics -->
+  <rect x="70" y="490" width="1060" height="120" fill="#ffffff" rx="12"/>
+  <text x="600" y="520" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="600" fill="#1e293b" text-anchor="middle">Performance Metrics</text>
+  
+  <rect x="80" y="540" width="200" height="60" fill="#f0fdf4" rx="8"/>
+  <text x="180" y="565" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#16a34a" text-anchor="middle">-22%</text>
+  <text x="180" y="585" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Avg Handling Time</text>
+  
+  <rect x="300" y="540" width="200" height="60" fill="#eff6ff" rx="8"/>
+  <text x="400" y="565" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#2563eb" text-anchor="middle">+18%</text>
+  <text x="400" y="585" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Task Success Rate</text>
+  
+  <rect x="520" y="540" width="200" height="60" fill="#fef3c7" rx="8"/>
+  <text x="620" y="565" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#d97706" text-anchor="middle">-12%</text>
+  <text x="620" y="585" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Transfer Rate</text>
+  
+  <rect x="740" y="540" width="200" height="60" fill="#faf5ff" rx="8"/>
+  <text x="840" y="565" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="700" fill="#9333ea" text-anchor="middle">300+</text>
+  <text x="840" y="585" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b" text-anchor="middle">Agents Using AI</text>
+  
+  <!-- Success indicators -->
+  <rect x="70" y="630" width="1060" height="120" fill="#f0fdf4" rx="12"/>
+  <text x="600" y="660" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#166534" text-anchor="middle">✅ Improvements Achieved</text>
+  
+  <text x="100" y="685" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Unified interface eliminates context switching</text>
+  <text x="100" y="705" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• AI pre-populates context and suggests actions</text>
+  <text x="100" y="725" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Real-time policy guidance with citations</text>
+  
+  <text x="600" y="685" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Automated actions reduce manual work</text>
+  <text x="600" y="705" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Confidence indicators improve decision making</text>
+  <text x="600" y="725" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#166534">• Progressive disclosure reduces cognitive load</text>
+  
+  <!-- Floating success indicator -->
+  <rect x="900" y="200" width="200" height="80" fill="#dcfce7" rx="8" stroke="#22c55e"/>
+  <text x="1000" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#166534" text-anchor="middle">✅ AI-Powered</text>
+  <text x="1000" y="245" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#166534" text-anchor="middle">Unified interface with</text>
+  <text x="1000" y="260" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#166534" text-anchor="middle">contextual guidance</text>
 </svg>

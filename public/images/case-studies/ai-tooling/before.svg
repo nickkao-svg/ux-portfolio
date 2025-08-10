@@ -1,4 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#f8fafc"/>
-  <text x="50%" y="50%" text-anchor="middle" font-size="42" font-family="Arial" fill="#334155">Before</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGradient)"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" fill="#1e293b" text-anchor="middle">Before: Fragmented Tools, Poor Intent Recognition</text>
+  
+  <!-- Browser tabs -->
+  <rect x="50" y="80" width="1100" height="40" fill="#f1f5f9" rx="8"/>
+  
+  <!-- Tab 1: Support Dashboard -->
+  <rect x="60" y="90" width="120" height="20" fill="#ffffff" rx="4"/>
+  <text x="120" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Support Dashboard</text>
+  
+  <!-- Tab 2: Customer DB -->
+  <rect x="190" y="90" width="100" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="240" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Customer DB</text>
+  
+  <!-- Tab 3: Policy Wiki -->
+  <rect x="300" y="90" width="90" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="345" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Policy Wiki</text>
+  
+  <!-- Tab 4: Billing System -->
+  <rect x="400" y="90" width="100" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="450" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Billing System</text>
+  
+  <!-- Tab 5: Email Client -->
+  <rect x="510" y="90" width="90" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="555" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Email Client</text>
+  
+  <!-- Tab 6: Slack -->
+  <rect x="610" y="90" width="70" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="645" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Slack</text>
+  
+  <!-- Tab 7: Knowledge Base -->
+  <rect x="690" y="90" width="110" height="20" fill="#f1f5f9" rx="4"/>
+  <text x="745" y="103" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Knowledge Base</text>
+  
+  <!-- Main Support Dashboard -->
+  <rect x="50" y="140" width="1100" height="620" fill="#ffffff" rx="12"/>
+  
+  <!-- Left Sidebar -->
+  <rect x="70" y="160" width="200" height="580" fill="#f8fafc" rx="8"/>
+  <text x="170" y="185" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b" text-anchor="middle">Ticket Queue</text>
+  
+  <!-- Ticket items -->
+  <rect x="80" y="200" width="180" height="60" fill="#ffffff" rx="6"/>
+  <text x="170" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#1e293b" text-anchor="middle">#SR-2024-001</text>
+  <text x="170" y="235" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Billing Issue</text>
+  <text x="170" y="250" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle">High Priority</text>
+  
+  <rect x="80" y="270" width="180" height="60" fill="#f1f5f9" rx="6"/>
+  <text x="170" y="290" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">#SR-2024-002</text>
+  <text x="170" y="305" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Login Problem</text>
+  <text x="170" y="320" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">Medium Priority</text>
+  
+  <rect x="80" y="340" width="180" height="60" fill="#f1f5f9" rx="6"/>
+  <text x="170" y="360" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#475569" text-anchor="middle">#SR-2024-003</text>
+  <text x="170" y="375" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">Feature Request</text>
+  <text x="170" y="390" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">Low Priority</text>
+  
+  <!-- Main content area -->
+  <rect x="290" y="160" width="840" height="580" fill="#f8fafc" rx="8"/>
+  
+  <!-- Ticket header -->
+  <rect x="310" y="180" width="800" height="60" fill="#ffffff" rx="8"/>
+  <text x="330" y="205" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#1e293b">Ticket #SR-2024-001</text>
+  <text x="330" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Customer: John Smith • Priority: High • Status: In Progress</text>
+  
+  <!-- Customer message -->
+  <rect x="310" y="260" width="800" height="120" fill="#ffffff" rx="8"/>
+  <text x="330" y="285" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Customer Message:</text>
+  <text x="330" y="305" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">"Hi, I've been charged twice for my subscription this month.</text>
+  <text x="330" y="325" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">I only signed up once and I'm seeing two charges on my</text>
+  <text x="330" y="345" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#1e293b">credit card statement. Can you help me resolve this?"</text>
+  
+  <!-- Action buttons -->
+  <rect x="310" y="400" width="800" height="60" fill="#ffffff" rx="8"/>
+  <text x="330" y="425" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Actions:</text>
+  
+  <rect x="330" y="440" width="100" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="380" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Check Billing</text>
+  
+  <rect x="450" y="440" width="100" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="500" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Process Refund</text>
+  
+  <rect x="570" y="440" width="100" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="620" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Escalate</text>
+  
+  <rect x="690" y="440" width="100" height="30" fill="#f1f5f9" rx="6"/>
+  <text x="740" y="460" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#475569" text-anchor="middle">Send Email</text>
+  
+  <!-- Response area -->
+  <rect x="310" y="480" width="800" height="120" fill="#ffffff" rx="8"/>
+  <text x="330" y="505" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Response:</text>
+  <text x="330" y="525" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#64748b">Type your response here...</text>
+  
+  <!-- Pain points indicators -->
+  <rect x="310" y="620" width="800" height="100" fill="#fef2f2" rx="8"/>
+  <text x="330" y="645" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#dc2626">Pain Points:</text>
+  <text x="330" y="665" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#dc2626">• No AI assistance or intent recognition</text>
+  <text x="330" y="685" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#dc2626">• Manual context switching between 7+ tools</text>
+  <text x="330" y="705" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#dc2626">• Poor search and outdated policy information</text>
+  
+  <!-- Floating notification -->
+  <rect x="900" y="200" width="200" height="80" fill="#fef3c7" rx="8" stroke="#f59e0b"/>
+  <text x="1000" y="225" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#92400e" text-anchor="middle">⚠️ Manual Process</text>
+  <text x="1000" y="245" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Agent must manually</text>
+  <text x="1000" y="260" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#92400e" text-anchor="middle">switch between tools</text>
 </svg>
