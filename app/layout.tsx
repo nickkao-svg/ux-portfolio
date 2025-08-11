@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
-import { ThemeProvider } from 'next-themes';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { absoluteUrl } from '@/lib/seo';
@@ -40,8 +39,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { color: '#ffffff' }, 
-    { color: '#0A84FF', media: '(prefers-color-scheme: dark)' }
+    { color: '#0B0B0C' }
   ],
 };
 
@@ -51,23 +49,16 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark">
       <body className={`${inter.variable} font-sans`}>
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <ThemeProvider 
-          attribute="class" 
-          defaultTheme="system" 
-          enableSystem 
-          disableTransitionOnChange
-        >
-          <Header />
-          <main id="main" className="mx-auto max-w-6xl px-4 sm:px-6">
-            {children}
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <Header />
+        <main id="main" className="mx-auto max-w-6xl px-4 sm:px-6">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

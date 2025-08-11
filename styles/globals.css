@@ -12,14 +12,86 @@ html:focus-within { scroll-behavior: smooth; }
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-body { @apply bg-white text-neutral-900 antialiased dark:bg-neutral-950 dark:text-neutral-100; }
+/* Apple-inspired dark theme base styles */
+body { 
+  @apply bg-charcoal text-text-primary antialiased;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(122, 184, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(155, 140, 255, 0.03) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
+}
 
-.skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-.skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; z-index: 50; @apply rounded-md bg-neutral-900 px-3 py-2 text-white shadow-subtle dark:bg-white dark:text-neutral-900; }
+/* Glass morphism effect */
+.glass {
+  @apply backdrop-blur-md bg-charcoal-50/30 border border-charcoal-200/20 shadow-glass;
+}
 
+/* Magnetic hover effect */
+.magnetic-hover {
+  @apply transition-all duration-300 ease-apple;
+}
+
+.magnetic-hover:hover {
+  @apply scale-[1.02] shadow-appleHover;
+}
+
+/* Smooth text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.skip-link { 
+  position: absolute; 
+  left: -999px; 
+  top: auto; 
+  width: 1px; 
+  height: 1px; 
+  overflow: hidden; 
+}
+
+.skip-link:focus { 
+  left: 1rem; 
+  top: 1rem; 
+  width: auto; 
+  height: auto; 
+  z-index: 50; 
+  @apply rounded-md bg-charcoal-100 px-3 py-2 text-text-primary shadow-apple border border-charcoal-200/20; 
+}
+
+/* Prose styles for content */
 .prose :where(img) { @apply rounded-lg; }
-.prose :where(a) { @apply underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-brand-500 dark:decoration-neutral-600 dark:hover:decoration-brand-400; }
+.prose :where(a) { 
+  @apply underline decoration-accent-blue/30 underline-offset-4 transition-colors hover:decoration-accent-blue; 
+}
 .prose :where(h2, h3, h4) a.anchor { @apply no-underline; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-charcoal-50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-charcoal-400;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-accent-blue/20 text-text-primary;
+}
+
+::-moz-selection {
+  @apply bg-accent-blue/20 text-text-primary;
+}
 
 @media print {
   :root { color-scheme: light; }

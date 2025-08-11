@@ -1,8 +1,15 @@
+'use client';
+
 import Image from 'next/image';
 import profile from '@/data/profile';
 import { press } from '@/data/press';
-
-export const metadata = { title: 'About' };
+import { 
+  AnimatedSection, 
+  AnimatedContainer, 
+  AnimatedCard, 
+  AnimatedText, 
+  AnimatedImage 
+} from '@/components/AnimatedComponents';
 
 const principles = [
   'Clarity over cleverness',
@@ -13,66 +20,95 @@ const principles = [
 
 function ProfileImage() {
   return (
-    <div className="relative aspect-square overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-800">
+    <AnimatedImage className="relative aspect-square overflow-hidden rounded-3xl glass" delay={0.4}>
       <Image 
         src="/images/headshot.svg" 
         alt="Portrait of Avery Lee" 
         fill 
         className="object-cover" 
       />
-    </div>
+    </AnimatedImage>
   );
 }
 
 function PrinciplesSection() {
   return (
-    <section>
-      <h2 className="mb-2 text-lg font-semibold">Principles</h2>
-      <ul className="list-inside list-disc text-neutral-700 dark:text-neutral-200">
-        {principles.map((principle) => (
-          <li key={principle}>{principle}</li>
+    <AnimatedSection className="space-y-6" delay={0.6}>
+      <h2 className="text-2xl font-bold text-text-primary">Design Principles</h2>
+      <ul className="space-y-4">
+        {principles.map((principle, index) => (
+          <AnimatedCard 
+            key={principle} 
+            className="p-6"
+            delay={0.8 + index * 0.1}
+          >
+            <div className="flex items-start gap-4">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-blue/10 flex-shrink-0">
+                <span className="w-2 h-2 rounded-full bg-accent-blue"></span>
+              </div>
+              <p className="text-text-secondary leading-relaxed font-medium">
+                {principle}
+              </p>
+            </div>
+          </AnimatedCard>
         ))}
       </ul>
-    </section>
+    </AnimatedSection>
   );
 }
 
 function PressSection() {
   return (
-    <section>
-      <h2 className="mb-2 text-lg font-semibold">Talks & press</h2>
-      <ul className="space-y-2">
-        {press.map((item) => (
-          <li key={item.title} className="text-neutral-600 dark:text-neutral-300">
-            <a className="hover:underline" href={item.link}>
-              {item.title}
-            </a>{' '}
-            — {item.outlet} ({item.year})
-          </li>
+    <AnimatedSection className="space-y-6" delay={1.0}>
+      <h2 className="text-2xl font-bold text-text-primary">Talks & Press</h2>
+      <div className="space-y-4">
+        {press.map((item, index) => (
+          <AnimatedCard 
+            key={item.title} 
+            className="p-6"
+            delay={1.2 + index * 0.1}
+          >
+            <a 
+              className="block space-y-2 hover:text-accent-blue transition-colors" 
+              href={item.link}
+            >
+              <h3 className="font-semibold text-text-primary">
+                {item.title}
+              </h3>
+              <p className="text-text-tertiary text-sm">
+                {item.outlet} • {item.year}
+              </p>
+            </a>
+          </AnimatedCard>
         ))}
-      </ul>
-    </section>
+      </div>
+    </AnimatedSection>
   );
 }
 
 export default function AboutPage() {
   return (
-    <div className="py-10">
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
-        <div className="md:col-span-4">
-          <ProfileImage />
-        </div>
-        <div className="space-y-6 md:col-span-8">
-          <h1 className="text-3xl font-semibold">
+    <div className="py-20">
+      <AnimatedSection className="space-y-16">
+        <AnimatedText className="text-center space-y-4" delay={0.2}>
+          <h1 className="text-4xl lg:text-6xl font-bold text-text-primary">
             About {profile.name}
           </h1>
-          <p className="max-w-prose text-neutral-700 dark:text-neutral-200">
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
             I'm a product/UX designer focused on AI tooling and safety workflows. I care deeply about clarity over cleverness, evidence over opinion, and crafting systems that scale.
           </p>
-          <PrinciplesSection />
-          <PressSection />
+        </AnimatedText>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-4">
+            <ProfileImage />
+          </div>
+          <div className="space-y-12 lg:col-span-8">
+            <PrinciplesSection />
+            <PressSection />
+          </div>
         </div>
-      </div>
+      </AnimatedSection>
     </div>
   );
 }

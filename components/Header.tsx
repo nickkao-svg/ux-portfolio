@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ThemeToggle } from '@/components/ThemeToggle';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const navigationItems = [
@@ -23,10 +23,10 @@ function NavigationLink({ href, label, isActive }: NavigationLinkProps) {
     <Link
       href={href as any}
       className={cn(
-        'rounded-md px-2 py-1 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500',
+        'rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent-blue/50',
         isActive
-          ? 'text-neutral-900 dark:text-white'
-          : 'text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white'
+          ? 'text-text-primary bg-charcoal-100/20'
+          : 'text-text-secondary hover:text-text-primary hover:bg-charcoal-100/10'
       )}
       aria-current={isActive ? 'page' : undefined}
     >
@@ -43,17 +43,22 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 dark:supports-[backdrop-filter]:bg-neutral-950/70">
+    <motion.header 
+      className="sticky top-0 z-40 backdrop-blur-md bg-charcoal/80 border-b border-charcoal-200/10"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
       <nav
         aria-label="Primary navigation"
         className="mx-auto flex h-[var(--header-height)] w-full max-w-6xl items-center justify-between px-4 sm:px-6"
       >
-        <Link href="/" className="font-semibold tracking-tight">
+        <Link href="/" className="font-bold text-xl tracking-tight">
           <span className="sr-only">Home</span>
-          <span className="text-neutral-900 dark:text-white">Avery Lee</span>
+          <span className="text-text-primary">Avery Lee</span>
         </Link>
 
-        <ul className="flex items-center gap-5">
+        <ul className="flex items-center gap-2">
           {navigationItems.map((item) => (
             <li key={item.href}>
               <NavigationLink
@@ -63,12 +68,9 @@ export default function Header() {
               />
             </li>
           ))}
-          <li>
-            <ThemeToggle />
-          </li>
         </ul>
       </nav>
-    </header>
+    </motion.header>
   );
 }
 

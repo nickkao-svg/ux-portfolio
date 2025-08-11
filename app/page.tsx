@@ -1,10 +1,19 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { allCaseStudies } from 'contentlayer/generated';
 import profile from '@/data/profile';
 import { testimonials } from '@/data/testimonials';
 import { brands } from '@/data/brands';
-import { CaseStudyCard } from '@/components/CaseStudyCard';
+import { 
+  AnimatedSection, 
+  AnimatedContainer, 
+  AnimatedCard, 
+  AnimatedText, 
+  AnimatedImage,
+  PageTransition 
+} from '@/components/AnimatedComponents';
 
 // Sort case studies by year (newest first)
 const sortedCaseStudies = allCaseStudies.sort((a, b) => b.year - a.year);
@@ -12,186 +21,258 @@ const sortedCaseStudies = allCaseStudies.sort((a, b) => b.year - a.year);
 // Component for the hero section
 function HeroSection() {
   return (
-    <section className="grid grid-cols-1 items-center gap-8 md:grid-cols-12">
-      <div className="space-y-6 md:col-span-7">
-        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-          {profile.name}
-        </h1>
-        <p className="text-xl text-neutral-600 dark:text-neutral-300">
-          {profile.title}
-        </p>
-        <p className="max-w-prose text-neutral-600 dark:text-neutral-300">
-          {profile.bio}
-        </p>
-        <div className="flex gap-3">
-          <Link
-            href="/work"
-            className="rounded-md bg-neutral-900 px-4 py-2 text-white transition-colors hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:bg-white dark:text-neutral-900 dark:hover:bg-neutral-200"
-          >
-            View Work
-          </Link>
-          <a
-            href={profile.resumeUrl}
-            className="rounded-md border border-neutral-300 px-4 py-2 text-neutral-700 transition-colors hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-brand-500 dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-900"
-          >
-            Download Résumé
-          </a>
-        </div>
-        <div className="flex items-center gap-3 text-sm text-neutral-500">
-          <span>{profile.location}</span>
-          <span aria-hidden="true">•</span>
-          <a 
-            className="hover:underline" 
-            href={`mailto:${profile.email}`}
-          >
-            {profile.email}
-          </a>
-        </div>
+    <AnimatedSection className="min-h-[80vh] flex items-center justify-center py-20">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <AnimatedText className="lg:col-span-7 space-y-8" delay={0.2}>
+          <div className="space-y-6">
+            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-text-primary leading-[0.9]">
+              {profile.name}
+            </h1>
+            <p className="text-xl lg:text-2xl text-accent-blue font-medium">
+              {profile.title}
+            </p>
+            <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
+              {profile.bio}
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Link
+              href="/work"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent-blue text-charcoal font-semibold rounded-2xl transition-all duration-300 hover:bg-accent-blueDark hover:scale-105 shadow-apple"
+            >
+              View Work
+            </Link>
+            <a
+              href={profile.resumeUrl}
+              className="inline-flex items-center justify-center px-8 py-4 border border-charcoal-200/30 text-text-primary font-semibold rounded-2xl transition-all duration-300 hover:bg-charcoal-100/20 hover:scale-105 glass"
+            >
+              Download Résumé
+            </a>
+          </div>
+          
+          <div className="flex items-center gap-4 text-text-tertiary text-sm pt-4">
+            <span>{profile.location}</span>
+            <span aria-hidden="true">•</span>
+            <a 
+              className="hover:text-accent-blue transition-colors" 
+              href={`mailto:${profile.email}`}
+            >
+              {profile.email}
+            </a>
+          </div>
+        </AnimatedText>
+        
+        <AnimatedImage className="lg:col-span-5" delay={0.4}>
+          <div className="relative aspect-square overflow-hidden rounded-3xl glass">
+            <Image 
+              src="/images/headshot.svg" 
+              alt="Portrait of Avery Lee" 
+              fill 
+              className="object-cover" 
+              priority
+            />
+          </div>
+        </AnimatedImage>
       </div>
-      <div className="relative h-56 overflow-hidden rounded-lg border border-neutral-200 md:col-span-5 md:h-72 dark:border-neutral-800">
-        <Image 
-          src="/images/headshot.svg" 
-          alt="Portrait of Avery Lee" 
-          fill 
-          className="object-cover" 
-        />
-      </div>
-    </section>
+    </AnimatedSection>
   );
 }
 
 // Component for the work section
 function WorkSection() {
   return (
-    <section aria-labelledby="work">
-      <h2 id="work" className="mb-6 text-lg font-semibold">
-        Work
-      </h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {sortedCaseStudies.map((item, index) => (
-          <article key={item._id} className="group space-y-4">
-            <Link 
-              href={item.url as any} 
-              className="relative aspect-[4/3] block overflow-hidden rounded-lg"
+    <AnimatedSection className="py-20">
+      <div className="space-y-12">
+        <AnimatedText className="text-center space-y-4" delay={0.2}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
+            Selected Work
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            Case studies showcasing my approach to product design and user experience
+          </p>
+        </AnimatedText>
+        
+        <AnimatedContainer className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {sortedCaseStudies.map((item, index) => (
+            <AnimatedCard 
+              key={item._id} 
+              className="group space-y-6 p-6"
+              delay={index * 0.1}
             >
-              <Image
-                src={item.heroImage}
-                alt={`${item.title} hero image`}
-                fill
-                className="object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.03]"
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                priority={index < 3}
-              />
-            </Link>
-            <div className="space-y-2">
-              <div className="flex flex-wrap gap-1">
-                {item.tags.slice(0, 2).map((tag) => (
-                  <span
-                    key={tag}
-                    className="inline-flex items-center rounded bg-neutral-100 px-1.5 py-0.5 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <h3 className="text-lg font-semibold leading-tight">
-                <Link href={item.url as any} className="hover:underline">
-                  {item.title}
-                </Link>
-              </h3>
-              <p className="text-sm text-neutral-600 dark:text-neutral-300">
-                {item.subtitle}
-              </p>
-              {item.impact?.[0] && (
-                <div className="text-xs text-neutral-500 dark:text-neutral-400">
-                  {item.impact[0]}
+              <Link 
+                href={item.url as any} 
+                className="relative aspect-[4/3] block overflow-hidden rounded-2xl"
+              >
+                <Image
+                  src={item.heroImage}
+                  alt={`${item.title} hero image`}
+                  fill
+                  className="object-cover transition-transform duration-500 ease-apple group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  priority={index < 3}
+                />
+              </Link>
+              
+              <div className="space-y-4">
+                <div className="flex flex-wrap gap-2">
+                  {item.tags.slice(0, 2).map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center rounded-full bg-charcoal-100/50 px-3 py-1 text-xs font-medium text-text-secondary border border-charcoal-200/20"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              )}
-            </div>
-          </article>
-        ))}
+                
+                <h3 className="text-xl font-semibold leading-tight text-text-primary">
+                  <Link href={item.url as any} className="hover:text-accent-blue transition-colors">
+                    {item.title}
+                  </Link>
+                </h3>
+                
+                <p className="text-text-secondary leading-relaxed">
+                  {item.subtitle}
+                </p>
+                
+                {item.impact?.[0] && (
+                  <div className="text-sm text-text-tertiary">
+                    {item.impact[0]}
+                  </div>
+                )}
+              </div>
+            </AnimatedCard>
+          ))}
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
 
 // Component for the brands section
 function BrandsSection() {
   return (
-    <section aria-labelledby="brands">
-      <h2 id="brands" className="mb-6 text-lg font-semibold">
-        Brands I've worked with
-      </h2>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:grid-cols-8">
-        {brands.map((brand) => {
-          const shouldInvert = ['OpenAI', 'Apple', 'Notion'].includes(brand.name);
-          return (
-            <div
+    <AnimatedSection className="py-20">
+      <div className="space-y-12">
+        <AnimatedText className="text-center space-y-4" delay={0.2}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
+            Brands I've worked with
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            Collaborating with teams to create exceptional user experiences
+          </p>
+        </AnimatedText>
+        
+        <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8">
+          {brands.map((brand, index) => (
+            <AnimatedCard 
               key={brand.name}
-              className="flex flex-col items-center gap-3 text-center"
+              className="flex flex-col items-center gap-4 text-center p-6"
+              delay={index * 0.05}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm border border-neutral-100 dark:bg-neutral-900 dark:border-neutral-800">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl glass">
                 <Image
                   src={brand.logo}
                   alt={brand.alt}
-                  width={24}
-                  height={24}
-                  className={`h-6 w-6 object-contain ${
-                    shouldInvert 
-                      ? 'dark:invert dark:brightness-0 dark:contrast-100' 
-                      : ''
-                  }`}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain filter brightness-0 invert opacity-80"
                 />
               </div>
-              <span className="text-xs text-neutral-600 dark:text-neutral-400">
+              <span className="text-sm text-text-tertiary font-medium">
                 {brand.name}
               </span>
-            </div>
-          );
-        })}
+            </AnimatedCard>
+          ))}
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }
 
 // Component for the testimonials section
 function TestimonialsSection() {
   return (
-    <section aria-labelledby="testimonials">
-      <h2 id="testimonials" className="mb-6 text-lg font-semibold">
-        Testimonials
-      </h2>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {testimonials.map((testimonial, index) => (
-          <blockquote 
-            key={index} 
-            className="rounded-lg border border-neutral-200 p-6 dark:border-neutral-800"
-          >
-            <p className="text-neutral-700 dark:text-neutral-200">
-              "{testimonial.quote}"
-            </p>
-            <footer className="mt-4">
-              <div className="font-medium text-neutral-900 dark:text-white">
-                {testimonial.author}
-              </div>
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                {testimonial.role}, {testimonial.company}
-              </div>
-            </footer>
-          </blockquote>
-        ))}
+    <AnimatedSection className="py-20">
+      <div className="space-y-12">
+        <AnimatedText className="text-center space-y-4" delay={0.2}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
+            What people say
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            Feedback from colleagues and collaborators
+          </p>
+        </AnimatedText>
+        
+        <AnimatedContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <AnimatedCard 
+              key={index} 
+              className="p-8 space-y-6"
+              delay={index * 0.1}
+            >
+              <blockquote className="text-text-secondary leading-relaxed text-lg">
+                "{testimonial.quote}"
+              </blockquote>
+              <footer className="space-y-2">
+                <div className="font-semibold text-text-primary">
+                  {testimonial.author}
+                </div>
+                <div className="text-sm text-text-tertiary">
+                  {testimonial.role}, {testimonial.company}
+                </div>
+              </footer>
+            </AnimatedCard>
+          ))}
+        </AnimatedContainer>
       </div>
-    </section>
+    </AnimatedSection>
+  );
+}
+
+// Component for the contact section
+function ContactSection() {
+  return (
+    <AnimatedSection className="py-20">
+      <div className="text-center space-y-12">
+        <AnimatedText className="space-y-6" delay={0.2}>
+          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
+            Let's work together
+          </h2>
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            I'm always interested in new opportunities and collaborations
+          </p>
+        </AnimatedText>
+        
+        <AnimatedCard className="max-w-md mx-auto p-8 space-y-6" delay={0.4}>
+          <div className="space-y-4">
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center justify-center w-full px-8 py-4 bg-accent-blue text-charcoal font-semibold rounded-2xl transition-all duration-300 hover:bg-accent-blueDark hover:scale-105 shadow-apple"
+            >
+              Get in touch
+            </a>
+            <div className="text-sm text-text-tertiary">
+              Available for freelance and full-time opportunities
+            </div>
+          </div>
+        </AnimatedCard>
+      </div>
+    </AnimatedSection>
   );
 }
 
 export default function HomePage() {
   return (
-    <div className="space-y-14 py-10">
-      <HeroSection />
-      <WorkSection />
-      <BrandsSection />
-      <TestimonialsSection />
-    </div>
+    <PageTransition>
+      <div className="space-y-0">
+        <HeroSection />
+        <WorkSection />
+        <BrandsSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </div>
+    </PageTransition>
   );
 }
