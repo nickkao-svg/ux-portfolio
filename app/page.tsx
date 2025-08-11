@@ -231,38 +231,6 @@ function TestimonialsSection() {
   );
 }
 
-// Component for the contact section
-function ContactSection() {
-  return (
-    <AnimatedSection className="py-20">
-      <div className="text-center space-y-12">
-        <AnimatedText className="space-y-6" delay={0.2}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
-            Let's work together
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            I'm always interested in new opportunities and collaborations
-          </p>
-        </AnimatedText>
-        
-        <AnimatedCard className="max-w-md mx-auto p-8 space-y-6" delay={0.4}>
-          <div className="space-y-4">
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex items-center justify-center w-full px-8 py-4 bg-accent-blue text-charcoal font-semibold rounded-2xl transition-all duration-300 hover:bg-accent-blueDark hover:scale-105 shadow-apple"
-            >
-              Get in touch
-            </a>
-            <div className="text-sm text-text-tertiary">
-              Available for freelance and full-time opportunities
-            </div>
-          </div>
-        </AnimatedCard>
-      </div>
-    </AnimatedSection>
-  );
-}
-
 export default function HomePage() {
   return (
     <PageTransition>
@@ -271,7 +239,6 @@ export default function HomePage() {
         <WorkSection />
         <BrandsSection />
         <TestimonialsSection />
-        <ContactSection />
       </div>
     </PageTransition>
   );
