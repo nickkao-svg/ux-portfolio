@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { allCaseStudies } from 'contentlayer/generated';
 import profile from '@/data/profile';
 import { testimonials } from '@/data/testimonials';
@@ -11,7 +10,6 @@ import {
   AnimatedContainer, 
   AnimatedCard, 
   AnimatedText, 
-  AnimatedImage,
   PageTransition 
 } from '@/components/AnimatedComponents';
 
@@ -21,59 +19,64 @@ const sortedCaseStudies = allCaseStudies.sort((a, b) => b.year - a.year);
 // Component for the hero section
 function HeroSection() {
   return (
-    <AnimatedSection className="min-h-[80vh] flex items-center justify-center py-20">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        <AnimatedText className="lg:col-span-7 space-y-8" delay={0.2}>
-          <div className="space-y-6">
-            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-text-primary leading-[0.9]">
-              {profile.name}
+    <AnimatedSection className="min-h-[80vh] flex items-center justify-center py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <AnimatedText className="text-center space-y-12" delay={0.2}>
+          {/* Main heading with dramatic typography */}
+                      <div className="space-y-6">
+            <h1 className="text-6xl lg:text-8xl xl:text-9xl font-black tracking-tighter text-text-primary leading-[0.8]">
+              {profile.name.split(' ').map((name, index) => (
+                <span key={index} className="block">
+                  {name}
+                </span>
+              ))}
             </h1>
-            <p className="text-xl lg:text-2xl text-accent-blue font-medium">
-              {profile.title}
-            </p>
-            <p className="text-lg text-text-secondary leading-relaxed max-w-2xl">
+            
+            {/* Subtitle with editorial typography */}
+            <div className="space-y-6">
+              <p className="text-2xl lg:text-3xl font-light text-accent-blue tracking-wide">
+                {profile.title}
+              </p>
+              <div className="w-32 h-1 bg-gradient-to-r from-accent-blue to-transparent mx-auto"></div>
+            </div>
+          </div>
+          
+          {/* Bio with refined typography */}
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl lg:text-2xl text-text-secondary leading-relaxed font-light">
               {profile.bio}
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+          {/* Call to action buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Link
               href="/work"
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent-blue text-charcoal font-semibold rounded-2xl transition-all duration-300 hover:bg-accent-blueDark hover:scale-105 shadow-apple"
+              className="group relative inline-flex items-center justify-center px-8 py-4 bg-accent-blue text-charcoal font-bold text-base tracking-wide transition-all duration-500 hover:bg-accent-blueDark overflow-hidden border-l-4 border-accent-blue"
             >
-              View Work
+              <span className="relative z-10">View Work</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-accent-blue to-accent-blueDark opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Link>
             <a
               href={profile.resumeUrl}
-              className="inline-flex items-center justify-center px-8 py-4 border border-charcoal-200/30 text-text-primary font-semibold rounded-2xl transition-all duration-300 hover:bg-charcoal-100/20 hover:scale-105 glass"
+              className="group relative inline-flex items-center justify-center px-8 py-4 border-2 border-charcoal-200 text-text-primary font-bold text-base tracking-wide transition-all duration-500 hover:border-accent-blue hover:bg-charcoal-50/20 overflow-hidden border-l-4 border-charcoal-200 group-hover:border-l-accent-blue"
             >
-              Download Résumé
+              <span className="relative z-10">Download Résumé</span>
             </a>
           </div>
           
-          <div className="flex items-center gap-4 text-text-tertiary text-sm pt-4">
-            <span>{profile.location}</span>
-            <span aria-hidden="true">•</span>
+          {/* Contact info with editorial typography */}
+          <div className="flex items-center justify-center gap-6 text-text-tertiary text-sm pt-12">
+            <span className="font-medium uppercase tracking-wider">{profile.location}</span>
+            <span aria-hidden="true" className="text-2xl">•</span>
             <a 
-              className="hover:text-accent-blue transition-colors" 
+              className="hover:text-accent-blue transition-colors font-medium uppercase tracking-wider underline decoration-1 underline-offset-4" 
               href={`mailto:${profile.email}`}
             >
               {profile.email}
             </a>
           </div>
         </AnimatedText>
-        
-        <AnimatedImage className="lg:col-span-5" delay={0.4}>
-          <div className="relative aspect-square overflow-hidden rounded-3xl glass">
-            <Image 
-              src="/images/headshot.svg" 
-              alt="Portrait of Avery Lee" 
-              fill 
-              className="object-cover" 
-              priority
-            />
-          </div>
-        </AnimatedImage>
       </div>
     </AnimatedSection>
   );
@@ -82,69 +85,84 @@ function HeroSection() {
 // Component for the work section
 function WorkSection() {
   return (
-    <AnimatedSection className="py-20">
-      <div className="space-y-12">
-        <AnimatedText className="text-center space-y-4" delay={0.2}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
-            Selected Work
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Case studies showcasing my approach to product design and user experience
-          </p>
-        </AnimatedText>
-        
-        <AnimatedContainer className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {sortedCaseStudies.map((item, index) => (
-            <AnimatedCard 
-              key={item._id} 
-              className="group space-y-6 p-6"
-              delay={index * 0.1}
-            >
-              <Link 
-                href={item.url as any} 
-                className="relative aspect-[4/3] block overflow-hidden rounded-2xl"
+    <AnimatedSection className="py-24 bg-gradient-to-b from-transparent to-charcoal-50/20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="space-y-16">
+          <AnimatedText className="text-center space-y-8" delay={0.2}>
+            <h2 className="text-5xl lg:text-7xl font-bold text-text-primary tracking-tight">
+              Selected Work
+            </h2>
+            <p className="text-xl lg:text-2xl text-text-secondary max-w-4xl mx-auto font-light leading-relaxed">
+              Case studies showcasing my approach to product design and user experience
+            </p>
+          </AnimatedText>
+          
+          <AnimatedContainer className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {sortedCaseStudies.map((item, index) => (
+              <AnimatedCard 
+                key={item._id} 
+                className="group relative overflow-hidden"
+                delay={index * 0.1}
               >
-                <Image
-                  src={item.heroImage}
-                  alt={`${item.title} hero image`}
-                  fill
-                  className="object-cover transition-transform duration-500 ease-apple group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                  priority={index < 3}
-                />
-              </Link>
-              
-              <div className="space-y-4">
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.slice(0, 2).map((tag) => (
-                    <span
-                      key={tag}
-                      className="inline-flex items-center rounded-full bg-charcoal-100/50 px-3 py-1 text-xs font-medium text-text-secondary border border-charcoal-200/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                
-                <h3 className="text-xl font-semibold leading-tight text-text-primary">
-                  <Link href={item.url as any} className="hover:text-accent-blue transition-colors">
-                    {item.title}
-                  </Link>
-                </h3>
-                
-                <p className="text-text-secondary leading-relaxed">
-                  {item.subtitle}
-                </p>
-                
-                {item.impact?.[0] && (
-                  <div className="text-sm text-text-tertiary">
-                    {item.impact[0]}
+                <div className="relative p-8 border-l-4 border-charcoal-200 hover:border-accent-blue transition-all duration-500">
+                  {/* Background pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-4 right-4 text-6xl font-black text-accent-blue">
+                      {(index + 1).toString().padStart(2, '0')}
+                    </div>
                   </div>
-                )}
-              </div>
-            </AnimatedCard>
-          ))}
-        </AnimatedContainer>
+                  
+                  {/* Main content */}
+                  <div className="relative space-y-4">
+                    {/* Project number and year */}
+                    <div className="flex justify-between items-start">
+                      <div className="text-2xl font-black text-accent-blue/30 group-hover:text-accent-blue/50 transition-colors duration-300">
+                        {(index + 1).toString().padStart(2, '0')}
+                      </div>
+                      <div className="text-2xl font-black text-accent-blue/30 group-hover:text-accent-blue/50 transition-colors duration-300">
+                        {item.year}
+                      </div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-2xl font-black text-text-primary group-hover:text-accent-blue transition-colors duration-300">
+                      <Link href={item.url as any}>
+                        {item.title}
+                      </Link>
+                    </h3>
+                    
+                    {/* Animated line */}
+                    <div className="h-0.5 bg-gradient-to-r from-accent-blue to-transparent w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    
+                    {/* Subtitle */}
+                    <p className="text-base text-text-secondary leading-relaxed font-light">
+                      {item.subtitle}
+                    </p>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {item.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center rounded-full bg-accent-blue/10 px-3 py-1 text-xs font-bold text-accent-blue border border-accent-blue/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Impact - always visible */}
+                    {item.impact?.[0] && (
+                      <div className="text-sm text-text-tertiary font-medium uppercase tracking-wider pt-2 border-t border-charcoal-200/30">
+                        {item.impact[0]}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </AnimatedCard>
+            ))}
+          </AnimatedContainer>
+        </div>
       </div>
     </AnimatedSection>
   );
@@ -153,39 +171,57 @@ function WorkSection() {
 // Component for the brands section
 function BrandsSection() {
   return (
-    <AnimatedSection className="py-20">
-      <div className="space-y-12">
-        <AnimatedText className="text-center space-y-4" delay={0.2}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
-            Brands I've worked with
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Collaborating with teams to create exceptional user experiences
-          </p>
-        </AnimatedText>
-        
-        <AnimatedContainer className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-8">
-          {brands.map((brand, index) => (
-            <AnimatedCard 
-              key={brand.name}
-              className="flex flex-col items-center gap-4 text-center p-6"
-              delay={index * 0.05}
-            >
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl glass">
-                <Image
-                  src={brand.logo}
-                  alt={brand.alt}
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain filter brightness-0 invert opacity-80"
-                />
-              </div>
-              <span className="text-sm text-text-tertiary font-medium">
-                {brand.name}
-              </span>
-            </AnimatedCard>
-          ))}
-        </AnimatedContainer>
+    <AnimatedSection className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="space-y-16">
+          <AnimatedText className="text-center space-y-8" delay={0.2}>
+            <h2 className="text-5xl lg:text-7xl font-bold text-text-primary tracking-tight">
+              Brands I've worked with
+            </h2>
+            <p className="text-xl lg:text-2xl text-text-secondary max-w-3xl mx-auto font-light leading-relaxed">
+              Collaborating with teams to create exceptional user experiences
+            </p>
+          </AnimatedText>
+          
+          <AnimatedContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {brands.map((brand, index) => (
+              <AnimatedCard 
+                key={brand.name}
+                className="group relative overflow-hidden"
+                delay={index * 0.1}
+              >
+                <div className="relative p-8 border-l-4 border-charcoal-200 hover:border-accent-blue transition-all duration-500">
+                  {/* Background pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-4 right-4 text-8xl font-black text-accent-blue">
+                      {brand.name.charAt(0)}
+                    </div>
+                  </div>
+                  
+                  {/* Main content */}
+                  <div className="relative space-y-4">
+                    <div className="text-3xl font-black text-text-primary group-hover:text-accent-blue transition-colors duration-300">
+                      {brand.name}
+                    </div>
+                    
+                    {/* Animated line */}
+                    <div className="h-0.5 bg-gradient-to-r from-accent-blue to-transparent w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    
+                    {/* Category label */}
+                    <div className="text-sm text-text-tertiary font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      Technology Partner
+                    </div>
+                  </div>
+                  
+                  {/* Floating number */}
+                  <div className="absolute bottom-4 right-4 text-4xl font-black text-accent-blue/10 group-hover:text-accent-blue/30 transition-colors duration-500">
+                    {(index + 1).toString().padStart(2, '0')}
+                  </div>
+                </div>
+              </AnimatedCard>
+            ))}
+          </AnimatedContainer>
+        </div>
       </div>
     </AnimatedSection>
   );
@@ -194,38 +230,62 @@ function BrandsSection() {
 // Component for the testimonials section
 function TestimonialsSection() {
   return (
-    <AnimatedSection className="py-20">
-      <div className="space-y-12">
-        <AnimatedText className="text-center space-y-4" delay={0.2}>
-          <h2 className="text-4xl lg:text-5xl font-bold text-text-primary">
-            What people say
-          </h2>
-          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            Feedback from colleagues and collaborators
-          </p>
-        </AnimatedText>
-        
-        <AnimatedContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <AnimatedCard 
-              key={index} 
-              className="p-8 space-y-6"
-              delay={index * 0.1}
-            >
-              <blockquote className="text-text-secondary leading-relaxed text-lg">
-                "{testimonial.quote}"
-              </blockquote>
-              <footer className="space-y-2">
-                <div className="font-semibold text-text-primary">
-                  {testimonial.author}
+    <AnimatedSection className="py-24 bg-gradient-to-b from-charcoal-50/20 to-transparent">
+      <div className="max-w-6xl mx-auto px-6">
+                  <div className="space-y-16">
+          <AnimatedText className="text-center space-y-12" delay={0.2}>
+            <h2 className="text-5xl lg:text-7xl font-bold text-text-primary tracking-tight">
+              What people say
+            </h2>
+            <p className="text-xl lg:text-2xl text-text-secondary max-w-4xl mx-auto font-light leading-relaxed">
+              Feedback from colleagues and collaborators
+            </p>
+          </AnimatedText>
+          
+          <AnimatedContainer className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {testimonials.map((testimonial, index) => (
+              <AnimatedCard 
+                key={index} 
+                className="group relative overflow-hidden"
+                delay={index * 0.1}
+              >
+                <div className="relative p-10 border-l-4 border-charcoal-200 hover:border-accent-blue transition-all duration-500">
+                  {/* Background pattern */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute top-6 right-6 text-8xl font-black text-accent-blue">
+                      "
+                    </div>
+                  </div>
+                  
+                  {/* Main content */}
+                  <div className="relative space-y-6">
+                    <blockquote className="text-xl text-text-secondary leading-relaxed font-light">
+                      {testimonial.quote}
+                    </blockquote>
+                    
+                    {/* Animated line */}
+                    <div className="h-0.5 bg-gradient-to-r from-accent-blue to-transparent w-0 group-hover:w-full transition-all duration-700 ease-out"></div>
+                    
+                    {/* Author info */}
+                    <footer className="space-y-3">
+                      <div className="font-bold text-lg text-text-primary group-hover:text-accent-blue transition-colors duration-300">
+                        {testimonial.author}
+                      </div>
+                      <div className="text-sm text-text-tertiary font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        {testimonial.role}, {testimonial.company}
+                      </div>
+                    </footer>
+                  </div>
+                  
+                  {/* Floating number */}
+                  <div className="absolute bottom-6 right-6 text-4xl font-black text-accent-blue/10 group-hover:text-accent-blue/30 transition-colors duration-500">
+                    {(index + 1).toString().padStart(2, '0')}
+                  </div>
                 </div>
-                <div className="text-sm text-text-tertiary">
-                  {testimonial.role}, {testimonial.company}
-                </div>
-              </footer>
-            </AnimatedCard>
-          ))}
-        </AnimatedContainer>
+              </AnimatedCard>
+            ))}
+          </AnimatedContainer>
+        </div>
       </div>
     </AnimatedSection>
   );
